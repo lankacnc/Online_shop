@@ -1,0 +1,186 @@
+
+/* =====================================
+   LANKACNC PRODUCT DETAILS
+===================================== */
+
+.product-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    max-width: 1150px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 12px;
+}
+
+.product-details-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 350px;
+}
+
+.product-details-image img {
+    width: 100%;
+    max-width: 450px;
+    height: 400px;
+    object-fit: contain;
+}
+
+.product-details-info h1 {
+    font-size: 27px;
+    margin: 12px 0;
+    color: #ffffff;
+}
+
+.product-category {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+.product-rating {
+    color: #facc15;
+    margin: 12px 0;
+}
+
+.product-details-price {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.product-details-price strong {
+    font-size: 27px;
+    color: #38bdf8;
+}
+
+.product-details-price del {
+    color: #94a3b8;
+}
+
+.product-option-box,
+.product-quantity {
+    margin: 20px 0;
+}
+
+.product-option-box label,
+.product-quantity label {
+    display: block;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+}
+
+.product-option-box select,
+.product-quantity input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    background: #0f172a;
+    color: white;
+    border: 1px solid #475569;
+    border-radius: 6px;
+}
+
+.product-stock {
+    margin: 15px 0;
+    color: #22c55e;
+    font-weight: 600;
+}
+
+#details-add-cart {
+    background: #0284c7;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    max-width: 300px;
+}
+
+#details-add-cart:hover {
+    background: #0369a1;
+}
+
+#details-add-cart:disabled {
+    background: #64748b;
+    cursor: not-allowed;
+}
+
+.product-description,
+.product-manuals {
+    margin-top: 25px;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+.product-description h3,
+.product-manuals h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.product-manuals a {
+    display: block;
+    color: #38bdf8;
+    margin: 8px 0;
+}
+
+.product-error {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.product-error a {
+    color: #38bdf8;
+}
+
+@media (max-width: 768px) {
+    .product-details {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .product-details-image {
+        min-height: 250px;
+    }
+
+    .product-details-image img {
+        height: 280px;
+    }
+
+    .product-details-info h1 {
+        font-size: 22px;
+    }
+
+    .product-details-price strong {
+        font-size: 23px;
+    }
+}
+
+.card {
+    position: relative;
+}
+
+.discount {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #ef4444;
+    color: #ffffff;
+    padding: 8px 13px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    z-index: 5;
+}

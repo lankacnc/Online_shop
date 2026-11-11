@@ -1,0 +1,752 @@
+
+/* ========================================
+   GOOGLE FONT
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f172a;
+    color:#ffffff;
+    overflow-x:hidden;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111827;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#38bdf8;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#0ea5e9;
+}
+
+::selection{
+    background:#38bdf8;
+    color:#fff;
+}
+
+/*=========================================
+HEADER
+=========================================*/
+
+header{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 8%;
+
+    background:#111827;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    border-bottom:1px solid #1f2937;
+
+}
+
+/* Logo */
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.logo h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 800;
+    color: #2286d4;
+    letter-spacing: 0.5px;
+}
+
+.logo h2 span {
+    color: #1491a3;
+}
+
+.logo h5 {
+    margin: 3px 0 0;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    color: #e1e4e8;
+}
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+
+/*=========================================
+Navigation
+=========================================*/
+
+nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:10px 16px;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+nav a:hover{
+
+    background:#38bdf8;
+
+    color:#111827;
+
+}
+
+#user-status{
+
+    color:#38bdf8;
+
+    font-weight:600;
+
+}
+
+#logout-btn{
+
+    border:none;
+
+    padding:10px 16px;
+
+    border-radius:8px;
+
+    background:#ef4444;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#logout-btn:hover{
+
+    background:#dc2626;
+
+}
+
+
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
+.contact-section {
+    width: 100%;
+    padding: 80px 6%;
+}
+
+
+/* ========================================
+   CONTACT CONTAINER
+======================================== */
+
+.contact-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+
+/* ========================================
+   CONTACT INFORMATION
+======================================== */
+
+.contact-info h1 {
+    font-size: 45px;
+    font-weight: 700;
+
+    color: #38bdf8;
+
+    margin-bottom: 20px;
+}
+
+.contact-info > p {
+    max-width: 550px;
+
+    color: #94a3b8;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* ========================================
+   INFO BOX
+======================================== */
+
+.info-box {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px 20px;
+
+    margin-bottom: 18px;
+
+    background: #1e293b;
+
+    border: 1px solid #334155;
+
+    border-radius: 10px;
+
+    transition: 0.3s ease;
+}
+
+.info-box:hover {
+    border-color: #38bdf8;
+
+    transform: translateX(5px);
+
+    box-shadow: 0 5px 20px rgba(56, 189, 248, 0.1);
+}
+
+
+/* ========================================
+   INFO ICON
+======================================== */
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #0f172a;
+
+    border-radius: 50%;
+
+    font-size: 23px;
+}
+
+
+/* ========================================
+   INFO TEXT
+======================================== */
+
+.info-box h3 {
+    color: #ffffff;
+
+    font-size: 16px;
+
+    margin-bottom: 4px;
+}
+
+.info-box p {
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   CONTACT FORM BOX
+======================================== */
+
+.contact-form-box {
+    background: #1e293b;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    border: 1px solid #334155;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.contact-form-box h2 {
+    color: #38bdf8;
+
+    font-size: 26px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   FORM GROUP
+======================================== */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   LABEL
+======================================== */
+
+.form-group label {
+    display: block;
+
+    color: #e2e8f0;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    margin-bottom: 8px;
+}
+
+
+/* ========================================
+   INPUT AND TEXTAREA
+======================================== */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    background: #0f172a;
+
+    color: #ffffff;
+
+    border: 1px solid #334155;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #64748b;
+}
+
+
+/* Focus */
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #38bdf8;
+
+    box-shadow:
+        0 0 0 3px rgba(56, 189, 248, 0.1);
+}
+
+
+/* Textarea */
+
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 140px;
+}
+
+
+/* ========================================
+   WHATSAPP BUTTON
+======================================== */
+
+.whatsapp-btn {
+    width: 100%;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #25d366;
+
+    color: #ffffff;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    transition: 0.3s ease;
+}
+
+
+/* WhatsApp Button Hover */
+
+.whatsapp-btn:hover {
+    background: #20bd5a;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(37, 211, 102, 0.25);
+}
+
+
+/* WhatsApp Icon */
+
+.whatsapp-btn span {
+    font-size: 20px;
+}
+
+
+/*=========================================
+FOOTER
+=========================================*/
+
+footer{
+    background:#111827;
+    text-align:center;
+    padding:35px;
+    margin-top:60px;
+}
+
+.footer-links{
+    margin-bottom:18px;
+}
+
+.footer-links a{
+    color:#fff;
+    text-decoration:none;
+    margin:0 15px;
+}
+
+.footer-links a:hover{
+    color:#38bdf8;
+}
+
+footer p{
+    color:#cbd5e1;
+}
+
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+
+    .contact-section {
+        padding: 60px 4%;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .contact-info h1 {
+        font-size: 38px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    header {
+        height: 75px;
+        padding: 0 18px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        padding: 15px 20px;
+        background: #111827;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        z-index: 1000;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .main-nav a {
+        padding: 13px 5px;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+
+
+    #user-status {
+        font-size: 12px;
+    }
+
+
+    #logout-btn {
+        padding: 7px 12px;
+
+        font-size: 12px;
+    }
+
+
+    .contact-section {
+        padding: 45px 20px;
+    }
+
+
+    .contact-info h1 {
+        font-size: 32px;
+    }
+
+
+    .contact-info > p {
+        font-size: 14px;
+    }
+
+
+    .info-box {
+        padding: 15px;
+    }
+
+
+    .contact-form-box {
+        padding: 25px 20px;
+    }
+
+
+    .contact-form-box h2 {
+        font-size: 22px;
+    }
+
+
+    .footer-links {
+        gap: 15px;
+    }
+
+
+    .footer-links a {
+        font-size: 13px;
+    }
+
+}
+
+
+/* ========================================
+   EXTRA SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+
+    .contact-info h1 {
+        font-size: 28px;
+    }
+
+
+    .contact-form-box {
+        padding: 20px 15px;
+    }
+
+}
+
+/* ===========================
+   AMAZON STYLE MOBILE HEADER
+=========================== */
+
+header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    background:#111827;
+    padding:15px 20px;
+    z-index:999;
+}
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .logo{
+        flex:1;
+        justify-content:center;
+    }
+
+    .logo h2{
+        font-size:22px;
+    }
+
+    .logo img{
+        width:40px;
+        height:40px;
+    }
+
+    nav{
+        position:fixed;
+        top:70px;
+        left:-100%;
+        width:260px;
+        height:100vh;
+        background:#111827;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:20px;
+        transition:.35s ease;
+        gap:5px;
+        z-index:998;
+    }
+
+    nav.active{
+        left:0;
+    }
+
+    nav a,
+    #logout-btn{
+        width:100%;
+        padding:15px;
+        text-align:left;
+    }
+
+    .cart-icon a{
+        font-size:26px;
+    }
+}
+
+
+.manual-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding: 10px 16px;
+    background: #d32f2f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.manual-btn:hover {
+    background: #b71c1c;
+}
+
+
+

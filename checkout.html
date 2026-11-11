@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout - LankaCNC | CNC, Electronics & PC Products in Sri Lanka</title>
+
+<link rel="stylesheet" href="checkout.css">
+<meta
+name="description"
+content="Buy CNC Machine, CNC Parts, Electronic accessories at the best prices in Sri Lanka.">
+
+<meta
+name="keywords"
+content="CNC machine sri lanka, CNC parts, Electronics, Tech accessories">
+
+<meta
+name="author"
+content="LankaCNC.LK">
+
+<meta property="og:title"
+      content="LankaCNC.LK">
+
+<meta property="og:description"
+      content="CNC Machine, CNC Parts, Electronic accessories.">
+
+<meta property="og:image"
+      content="images/logo.png">
+
+<meta property="og:url"
+      content="https://www.lankacnc.lk">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="icon"
+      href="images/logo.png"
+      type="image/png">
+</head>
+<body>
+
+<header>
+    
+<button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="logo">
+    <a href="index.html">
+        <img src="images/logo.png" alt="LankaCNC Logo">
+
+        <div>
+            <h2>LANKACNC<span>.lk</span></h2>
+            <h5>PRECISION ENGINEERING SOLUTIONS</h5>
+        </div>
+    </a>
+</div>
+
+<nav id="nav-menu">
+
+        <a href="index.html">Home</a>
+        <a href="index.html">Products</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="signin.html" id="signin-link">
+            Sign In
+        </a>
+
+        <span id="user-status"></span>
+
+        <button id="logout-btn" style="display:none;">
+            Logout
+        </button>
+
+        <a href="admin.html" id="admin-link" style="display:none;">
+            Admin
+        </a>
+    </nav>
+
+</header>
+
+<div class="container">
+
+    <!-- Customer Details -->
+    <div class="customer">
+
+        <h2>Customer Details</h2>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Full Name"
+            required
+        >
+
+        <input
+            type="tel"
+            id="phone"
+            placeholder="Phone Number"
+            required
+        >
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email"
+        >
+
+        <select id="province" required>
+
+            <option value="">Select Province</option>
+
+            <option>Western</option>
+            <option>Central</option>
+            <option>Southern</option>
+            <option>Northern</option>
+            <option>Eastern</option>
+            <option>North Western</option>
+            <option>North Central</option>
+            <option>Uva</option>
+            <option>Sabaragamuwa</option>
+
+        </select>
+
+        <select id="district" required>
+            <option value="">Select District</option>
+        </select>
+
+        <input
+            type="text"
+            id="city"
+            placeholder="City"
+            required
+        >
+
+        <textarea
+            id="address"
+            placeholder="Street Address"
+            required
+        ></textarea>
+
+        <input
+            type="text"
+            id="postcode"
+            placeholder="Postal Code"
+        >
+
+    </div>
+
+
+    <!-- Order Summary -->
+    <div class="order">
+
+        <h2>Order Summary</h2>
+
+        <div class="order-number">
+            <strong>Order No :</strong>
+            <span id="order-number"></span>
+        </div>
+
+
+        <!-- Coupon -->
+        <div class="coupon">
+
+            <input
+                type="text"
+                id="coupon"
+                placeholder="Coupon Code"
+            >
+
+            <button id="apply-coupon">
+                Apply
+            </button>
+
+        </div>
+
+
+        <!-- Order Table -->
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody id="order-items">
+            </tbody>
+
+
+            <tfoot>
+
+                <tr>
+                    <td colspan="4">Subtotal</td>
+                    <td id="subtotal">Rs.0</td>
+                </tr>
+
+                <tr>
+                    <td colspan="4">Delivery</td>
+                    <td id="delivery">Rs.500</td>
+                </tr>
+
+                <tr>
+                    <td colspan="4">Discount</td>
+                    <td id="discount">Rs.0</td>
+                </tr>
+
+                <tr>
+                    <td colspan="4">
+                        <strong>Grand Total</strong>
+                    </td>
+
+                    <td>
+                        <strong id="grand-total">
+                            Rs.0
+                        </strong>
+                    </td>
+                </tr>
+
+            </tfoot>
+
+        </table>
+
+
+        
+
+    </div>
+
+    <!-- Payment Method -->
+        <h2>Payment Method</h2>
+
+        <label>
+            <input
+                type="radio"
+                name="payment"
+                value="Bank Transfer"
+                checked
+            >
+            Bank Transfer
+        </label>
+
+        <br>
+
+        <label>
+            <input
+                type="radio"
+                name="payment"
+                value="Cash on Delivery"
+            >
+            Cash on Delivery
+        </label>
+
+        <br>
+
+        <label>
+            <input
+                type="radio"
+                name="payment"
+                value="PayHere"
+            >
+            PayHere
+        </label>
+
+
+        <!-- Order Notes -->
+        <h2>Order Notes</h2>
+
+        <textarea
+            id="notes"
+            placeholder="Any special instructions?"
+        ></textarea>
+
+
+
+      <a href="index.html" class="continue-btn">
+            ← Continue Shopping
+        </a>  
+      
+        <!-- Buttons -->
+        <button id="whatsapp-btn">
+
+            
+            Place Order via WhatsApp
+        </button>
+
+        
+
+</div>
+<footer>
+
+    <div class="footer-links">
+
+        <a href="about.html">About</a>
+
+        <a href="privacy.html">Privacy Policy</a>
+
+        <a href="terms.html">Terms & Conditions</a>
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <p>&copy; 2026 LankaCNC.LK Sri Lanka. All Rights Reserved.</p>
+
+</footer>
+
+<script src="js/menu.js"></script>
+<script src="js/checkout.js"></script>
+<script src="js/district.js"></script>
+<script src="js/ordernum.js"></script>
+<script src="js/pay.js"></script>
+<script src="js/signin.js"></script>
+<!-- Authentication API must load first -->
+<script src="js/auth-api.js"></script>
+<script src="js/auth.js"></script>
+
+
+</body>
+</html>

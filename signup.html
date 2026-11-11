@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - LankaCNC | CNC, Electronics & PC Products in Sri Lanka</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+<div class="signup-container">
+    <h2>Create Account</h2>
+
+    <form id="signup-form" novalidate>
+        <input type="text" id="name" placeholder="Full Name" autocomplete="name" maxlength="100" required>
+        <input type="email" id="email" placeholder="Email Address" autocomplete="email" required>
+        <div class="password-wrapper" style="position:relative;"><input type="password" id="password" placeholder="Password" autocomplete="new-password" minlength="8" required style="width:100%;box-sizing:border-box;padding-right:45px;"><button type="button" id="togglePassword" aria-label="Show password" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);border:0;background:transparent;cursor:pointer;font-size:18px;padding:4px;">👁️</button></div>
+        <div class="password-wrapper" style="position:relative;"><input type="password" id="confirmPassword" placeholder="Confirm Password" autocomplete="new-password" minlength="8" required style="width:100%;box-sizing:border-box;padding-right:45px;"><button type="button" id="toggleConfirmPassword" aria-label="Show password" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);border:0;background:transparent;cursor:pointer;font-size:18px;padding:4px;">👁️</button></div>
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <p>
+        Already have an account?
+        <a href="signin.html">Sign In</a>
+    </p>
+</div>
+
+<script src="js/auth-api.js"></script>
+<script src="js/signup.js"></script>
+<script src="js/auth.js"></script>
+<script>function toggle(b,i){document.getElementById(b).addEventListener("click",function(){const p=document.getElementById(i),h=p.type==="password";p.type=h?"text":"password";this.textContent=h?"🙈":"👁️";this.setAttribute("aria-label",h?"Hide password":"Show password");});}toggle("togglePassword","password");toggle("toggleConfirmPassword","confirmPassword");</script>
+</body>
+</html>

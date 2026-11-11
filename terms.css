@@ -1,0 +1,565 @@
+
+/* =========================================================
+   LANKACNC TERMS & CONDITIONS
+   ========================================================= */
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.terms-hero {
+    min-height: 390px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    background:
+        linear-gradient(
+            rgba(15, 23, 42, 0.96),
+            rgba(15, 23, 42, 0.96)
+        );
+
+    color: #ffffff;
+}
+
+
+.terms-hero-content {
+    width: min(850px, 100%);
+    margin: auto;
+}
+
+
+.terms-label {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: #60a5fa;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.terms-hero h1 {
+    margin: 0 0 18px;
+
+    font-size: clamp(38px, 6vw, 60px);
+
+    line-height: 1.1;
+}
+
+
+.terms-hero p {
+    max-width: 650px;
+
+    margin: 0 auto 25px;
+
+    color: #cbd5e1;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+.last-updated {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+}
+
+
+.last-updated i {
+    color: #60a5fa;
+}
+
+
+.last-updated strong {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MAIN SECTION
+   ========================================================= */
+
+.terms-section {
+    padding: 80px 20px;
+
+    background: #f8fafc;
+}
+
+
+.terms-container {
+    width: min(1000px, 100%);
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.terms-intro {
+    margin-bottom: 35px;
+
+    padding: 30px 35px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-left: 5px solid #2563eb;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.04);
+}
+
+
+.terms-intro p {
+    margin: 0 0 15px;
+
+    color: #475569;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+.terms-intro p:last-child {
+    margin-bottom: 0;
+}
+
+
+.terms-intro strong {
+    color: #0f172a;
+}
+
+
+/* =========================================================
+   TERMS CARDS
+   ========================================================= */
+
+.terms-card {
+    display: grid;
+
+    grid-template-columns: 70px 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 22px;
+
+    padding: 32px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.035);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.terms-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.07);
+}
+
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+.terms-number {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.terms-content h2 {
+    margin: 0 0 16px;
+
+    color: #0f172a;
+
+    font-size: 25px;
+
+    line-height: 1.3;
+}
+
+
+.terms-content p {
+    margin: 0 0 16px;
+
+    color: #475569;
+
+    font-size: 15.5px;
+
+    line-height: 1.8;
+}
+
+
+.terms-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+.terms-content strong {
+    color: #0f172a;
+}
+
+
+/* =========================================================
+   LIST
+   ========================================================= */
+
+.terms-content ul {
+    margin: 12px 0 20px;
+
+    padding-left: 25px;
+}
+
+
+.terms-content li {
+    margin-bottom: 9px;
+
+    color: #475569;
+
+    font-size: 15.5px;
+
+    line-height: 1.7;
+}
+
+
+.terms-content li::marker {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   SECURITY WARNING
+   ========================================================= */
+
+.security-warning {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-top: 22px;
+
+    padding: 18px 20px;
+
+    border-radius: 12px;
+
+    background: #fff7ed;
+
+    border: 1px solid #fed7aa;
+}
+
+
+.security-warning > i {
+    flex-shrink: 0;
+
+    margin-top: 3px;
+
+    color: #ea580c;
+
+    font-size: 20px;
+}
+
+
+.security-warning p {
+    margin: 0;
+
+    color: #9a3412;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+.security-warning strong {
+    color: #9a3412;
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+
+.contact-terms-card {
+    border-color: #bfdbfe;
+}
+
+
+.contact-details {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+
+    margin-top: 25px;
+}
+
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 18px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+}
+
+
+.contact-item > i {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #dbeafe;
+
+    color: #2563eb;
+
+    font-size: 17px;
+}
+
+
+.contact-item div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.contact-item span {
+    color: #64748b;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+
+.contact-item strong {
+    color: #0f172a;
+
+    font-size: 14px;
+}
+
+
+.contact-item a {
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    word-break: break-word;
+}
+
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .terms-hero {
+        min-height: 350px;
+
+        padding: 60px 18px;
+    }
+
+
+    .terms-hero h1 {
+        font-size: 40px;
+    }
+
+
+    .terms-hero p {
+        font-size: 16px;
+    }
+
+
+    .terms-section {
+        padding: 55px 15px;
+    }
+
+
+    .terms-intro {
+        padding: 25px 22px;
+    }
+
+
+    .terms-card {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        padding: 25px 22px;
+    }
+
+
+    .terms-number {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .terms-content h2 {
+        font-size: 22px;
+    }
+
+
+    .contact-details {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .terms-hero {
+        min-height: 320px;
+    }
+
+
+    .terms-hero h1 {
+        font-size: 34px;
+    }
+
+
+    .terms-label {
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .last-updated {
+        font-size: 12px;
+
+        padding: 9px 13px;
+    }
+
+
+    .terms-section {
+        padding: 45px 12px;
+    }
+
+
+    .terms-intro {
+        padding: 22px 18px;
+    }
+
+
+    .terms-card {
+        padding: 22px 18px;
+    }
+
+
+    .terms-content p,
+    .terms-content li {
+        font-size: 14.5px;
+    }
+
+
+    .contact-item {
+        padding: 15px;
+    }
+
+}

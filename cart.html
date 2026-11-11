@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - LankaCNC | CNC, Electronics & PC Products in Sri Lanka</title>
+
+    <link rel="stylesheet" href="cart.css">
+
+   <meta
+name="description"
+content="Buy CNC Machine, CNC Parts, Electronic accessories at the best prices in Sri Lanka.">
+
+<meta
+name="keywords"
+content="CNC machine sri lanka, CNC parts, Electronics, Tech accessories">
+
+<meta
+name="author"
+content="LankaCNC">
+
+<meta property="og:title"
+      content="Shopping Cart - LankaCNC | CNC, Electronics & PC Products in Sri Lanka">
+
+<meta property="og:description"
+      content="CNC Machine, CNC Parts, Electronic accessories.">
+
+<meta property="og:image"
+      content="https://www.lankacnc.lk/images/logo.png">
+
+<meta property="og:url"
+      content="https://www.lankacnc.lk/cart.html">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="icon"
+      href="images/logo.png"
+      type="image/png">
+</head>
+<body>
+
+<header>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="logo">
+    <a href="index.html">
+        <img src="images/logo.png" alt="LankaCNC Logo">
+
+        <div>
+            <h2>LankaCNC<span>.lk</span></h2>
+            <h5>PRECISION ENGINEERING SOLUTIONS</h5>
+        </div>
+    </a>
+</div>
+
+<nav id="nav-menu">
+
+        <a href="index.html">Home</a>
+        <a href="index.html">Products</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="signin.html" id="signin-link">
+            Sign In
+        </a>
+
+        <span id="user-status"></span>
+
+        <button id="logout-btn" style="display:none;">
+            Logout
+        </button>
+
+        <a href="admin.html" id="admin-link" style="display:none;">
+            Admin
+        </a>
+    </nav>
+
+</header>
+
+<div class="cart-container">
+
+    <h1>Shopping Cart</h1>
+
+    <table class="cart-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Image</th>
+                <th>Product</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Item Total</th>
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="cart-items">
+
+        </tbody>
+
+        <tfoot>
+
+            <tr>
+
+                <td colspan="4"></td>
+
+                <td>
+                    <strong id="total">
+                        Rs. 0
+                    </strong>
+                </td>
+
+                <td></td>
+
+            </tr>
+
+        </tfoot>
+
+    </table>
+
+</div>
+
+
+
+    <!-- Delivery -->
+    <div class="delivery-info">
+        <p>🚚 Estimated Delivery: 3 - 5 Working Days</p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="cart-buttons">
+
+
+        <a href="index.html"
+           class="continue-btn">
+            Continue Shopping
+        </a>
+
+        <a href="checkout.html"
+           id="checkout-link"
+           class="checkout-btn">
+            Proceed to Checkout
+        </a>
+
+    </div>
+
+<footer>
+
+    <div class="footer-links">
+
+        <a href="about.html">About</a>
+
+        <a href="privacy.html">Privacy Policy</a>
+
+        <a href="terms.html">Terms & Conditions</a>
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <p>&copy; 2026 LankaCNC.LK Sri Lanka. All Rights Reserved.</p>
+
+</footer>
+
+<script src="js/menu.js"></script>
+<script src="js/cart1.js"></script>
+
+<script src="js/app.js"></script>
+<!-- Authentication API must load first -->
+<script src="js/auth-api.js"></script>
+<script src="js/auth.js"></script>
+
+
+
+</body>
+</html>

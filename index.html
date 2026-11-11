@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta name="theme-color" content="#0f172a">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LankaCNC | CNC Design, Electronics and pc accessories in Sri Lanka</title>
+
+<link rel="stylesheet" href="style.css">
+
+<meta
+name="description"
+content="Buy CNC Machine, CNC Parts, Electronic , Handcraft item and Pc Accessories at the best prices in Sri Lanka.">
+
+<meta
+name="keywords"
+content="CNC design , CNC machine sri lanka , LankaCNC, CNC parts in sri lanka, Electronics, Pc Accessories, sri lanka,  Mouse, Keybord,handcraft">
+
+<meta
+name="author"
+content="LankaCNC.lk">
+
+<meta property="og:title"
+      content="LankaCNC | CNC Design, Electronics and pc accessories in Sri Lanka">
+
+<meta property="og:description"
+      content="Buy CNC Machine, CNC Parts, Electronic , Handcraft item and Pc Accessories at the best prices in Sri Lanka.">
+
+<meta property="og:image"
+      content="https://www.lankacnc.lk/images/logo.png">
+
+<meta property="og:url"
+      content="https://www.lankacnc.lk/">
+
+<meta name="google-site-verification" content="-dbCQNtnk6hAcx87Cb0XUlhyczqd01npxGWS7QN7RQI" />
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+<link rel="icon"
+      href="images/logo.png"
+      type="image/png">
+
+
+</head>
+
+<body>
+
+<header>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+   <div class="logo">
+    <img src="images/logo.png" alt="LankaCNC Logo">
+
+    <div>
+        <h2>LankaCNC<span>.lk</span></h2>
+        <h5>PRECISION ENGINEERING SOLUTIONS</h5>
+    </div>
+</div>
+    
+
+    <nav id="nav-menu">
+
+        <a href="index.html">Home</a>
+        
+        <a href="#product-list">Products</a>
+        <a href="design.html">CNC Design</a>
+        
+        <a href="contact.html">Contact</a>
+
+        <a href="about.html">About Us</a>
+
+        <a href="signin.html" id="signin-link">
+            Sign In
+        </a>
+
+        <span id="user-status"></span>
+
+        <button id="logout-btn" style="display:none;">
+            Logout
+        </button>
+
+        <a href="admin.html" id="admin-link" style="display:none;">
+            Admin
+        </a>
+    </nav>
+       <div class="cart-icon">
+        <a href="cart.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">0</span>
+        </a>
+    </div>
+
+</header>
+<main>
+<section class="hero">
+
+<h1>We have the technical solution to your problem.</h1>
+
+<p>Best Prices in Sri Lanka</p>
+
+<button onclick="location.href='index.html'">
+    Shop Now
+</button>
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="Search products..."
+        aria-label="Search products">
+
+    <button id="search-btn" type="button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+
+</div>
+
+<div class="filters">
+
+
+   <button onclick="filterProducts('All')">
+        All
+    </button>
+
+    <button onclick="filterProducts('Pc')">
+         Pc Accessories 
+    </button>
+
+    <button onclick="filterProducts('CNC Parts')">
+        CNC Parts
+    </button>
+
+    <button onclick="filterProducts('Machineries')">
+       Machineries
+    </button>
+
+    <button onclick="filterProducts('Electronics')">
+        Electronics
+    </button>
+
+    <button onclick="filterProducts('Handcraft')">
+        Handcraft Item
+    </button>
+
+</div>
+</section>
+
+
+<section class="products" id="product-list">
+
+    <p>Loading products...</p>
+
+</section>
+
+
+</main>
+
+
+<button id="topBtn">
+    ↑
+</button>
+
+<a
+href="https://wa.me/94764960463"
+class="whatsapp-btn"
+target="_blank"
+rel="noopener noreferrer">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+<footer>
+
+    <div class="footer-links">
+
+        <a href="about.html">About</a>
+
+        <a href="privacy.html">Privacy Policy</a>
+
+        <a href="terms.html">Terms & Conditions</a>
+
+        <a href="contact.html">Contact</a>
+<a href="admin.html">Admin Dashboard</a>
+    </div>
+
+    <p>&copy; 2026 LankaCNC.LK Sri Lanka. All Rights Reserved.</p>
+
+</footer>
+
+
+<script src="js/menu.js"></script>
+
+<!-- Google Sheets API -->
+<script src="js/products-api.js"></script>
+
+<!-- Load products -->
+<script src="js/products.js"></script>
+
+<!-- Cart -->
+<script src="js/indexcart.js"></script>
+
+<!-- Search and Filters -->
+<script src="js/filterproduct.js"></script>
+<script src="js/search.js"></script>
+
+<!-- Authentication -->
+<script src="js/auth-api.js"></script>
+<script src="js/auth.js"></script>
+
+<script src="js/topbutton.js"></script>
+
+
+</body>
+</html>

@@ -14,16 +14,19 @@
     <button id="logoutBtn" hidden>Logout</button>
   </header>
 
-  <!-- LOGIN -->
+  <!-- ADMIN LOGIN -->
   <section id="loginSection" class="login-box">
     <h2>Admin Login</h2>
+
     <input type="password" id="adminKey"
       placeholder="Enter your password">
+
     <button id="loginBtn">Login</button>
+
     <p id="loginMessage"></p>
   </section>
 
-  <!-- DASHBOARD -->
+  <!-- ADMIN DASHBOARD -->
   <main id="dashboard" hidden>
 
     <section class="dashboard-top">
@@ -31,7 +34,9 @@
       <button id="addProductBtn">+ Add Product</button>
     </section>
 
+    <!-- PRODUCT FORM -->
     <section class="product-form-box" id="productFormBox" hidden>
+
       <h3 id="formTitle">Add Product</h3>
 
       <form id="productForm">
@@ -51,18 +56,28 @@
           <option>Handcraft</option>
         </select>
 
-        <label>Product Image</label>
+        <!-- PRODUCT IMAGE -->
+        <label>Upload Product Image</label>
         <input type="file" id="imageFile" accept="image/*">
-        <img id="imagePreview" alt="Image preview" hidden>
 
-        <label>Image URL</label>
-        <input id="image" placeholder="Google Drive image URL">
+        <img id="imagePreview"
+          alt="Image preview"
+          hidden>
+
+        <label>Or Paste Google Drive Image URL</label>
+        <input
+          type="url"
+          id="image"
+          placeholder="https://drive.google.com/file/d/FILE_ID/view">
+
+        <p>Google Drive image links automatically convert to thumbnail URLs.</p>
 
         <div class="two-columns">
           <div>
             <label>Old Price</label>
             <input type="number" id="oldPrice" min="0">
           </div>
+
           <div>
             <label>Price</label>
             <input type="number" id="price" min="0" required>
@@ -74,6 +89,7 @@
             <label>Discount</label>
             <input id="discount" placeholder="10%">
           </div>
+
           <div>
             <label>Stock Quantity</label>
             <input type="number" id="stock" min="0" value="0">
@@ -86,13 +102,36 @@
         <label>Description</label>
         <textarea id="description" rows="5"></textarea>
 
-        <label>Manual PDF 1 URL</label>
-        <input id="manualPdf1">
+        <!-- MANUAL PDF 1 -->
+        <label>Manual PDF 1 - Upload</label>
+        <input
+          type="file"
+          id="manualPdf1File"
+          accept="application/pdf,.pdf">
 
-        <label>Manual PDF 2 URL</label>
-        <input id="manualPdf2">
+        <label>Or Paste Manual PDF 1 Google Drive URL</label>
+        <input
+          type="url"
+          id="manualPdf1"
+          placeholder="https://drive.google.com/file/d/FILE_ID/view">
+
+        <!-- MANUAL PDF 2 -->
+        <label>Manual PDF 2 - Upload</label>
+        <input
+          type="file"
+          id="manualPdf2File"
+          accept="application/pdf,.pdf">
+
+        <label>Or Paste Manual PDF 2 Google Drive URL</label>
+        <input
+          type="url"
+          id="manualPdf2"
+          placeholder="https://drive.google.com/file/d/FILE_ID/view">
+
+        <p>PDF links automatically convert to direct download URLs.</p>
 
         <label>Size Options (JSON)</label>
+
         <textarea id="options" rows="6"
           placeholder='[{"size":"3.175x12mm","price":850,"stock":10}]'></textarea>
 
@@ -102,20 +141,33 @@
         </label>
 
         <div class="form-buttons">
-          <button type="submit" id="saveBtn">Save Product</button>
-          <button type="button" id="cancelBtn">Cancel</button>
+          <button type="submit" id="saveBtn">
+            Save Product
+          </button>
+
+          <button type="button" id="cancelBtn">
+            Cancel
+          </button>
         </div>
 
         <p id="formMessage"></p>
+
       </form>
     </section>
 
+    <!-- PRODUCTS TABLE -->
     <section class="products-table-box">
+
       <h3>All Products</h3>
-      <input id="searchProducts" placeholder="Search products...">
+
+      <input
+        id="searchProducts"
+        placeholder="Search products...">
 
       <div class="table-scroll">
+
         <table>
+
           <thead>
             <tr>
               <th>ID</th>
@@ -126,10 +178,15 @@
               <th>Actions</th>
             </tr>
           </thead>
+
           <tbody id="productsTable">
-            <tr><td colspan="6">Loading...</td></tr>
+            <tr>
+              <td colspan="6">Loading...</td>
+            </tr>
           </tbody>
+
         </table>
+
       </div>
     </section>
 

@@ -1,15 +1,14 @@
 
-// ==========================================
-// LANKACNC - GOOGLE SHEETS PRODUCT DETAILS
-// ==========================================
+/* ==========================================
+   LANKACNC - PRODUCT DETAILS PAGE
+   Screenshot Matching Version
+========================================== */
 
 let currentProduct = null;
 let selectedOption = null;
 
 // ==========================================
-// GET PRODUCT SLUG FROM URL
-// Example:
-// product-details.html?product=richauto-a18-4-axis-dsp-cnc-controller
+// GET PRODUCT FROM URL
 // ==========================================
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -19,7 +18,7 @@ const productContainer =
     document.getElementById("product-details");
 
 // ==========================================
-// HTML SECURITY HELPER
+// HTML SECURITY
 // ==========================================
 
 function escapeHTML(value) {
@@ -32,7 +31,6 @@ function escapeHTML(value) {
     })[char]);
 }
 
-// Allow only HTTP(S) or relative URLs for images and manuals.
 function safeURL(value) {
     const url = String(value || "").trim();
 
@@ -49,7 +47,7 @@ function safeURL(value) {
 }
 
 // ==========================================
-// LOAD PRODUCT FROM GOOGLE SHEETS
+// LOAD PRODUCT
 // ==========================================
 
 async function loadProductDetails() {
@@ -77,7 +75,7 @@ async function loadProductDetails() {
 
     } catch (error) {
 
-        console.error("Product loading error:", error);
+        console.error(error);
 
         productContainer.innerHTML = `
             <div class="product-error">
@@ -90,7 +88,7 @@ async function loadProductDetails() {
 }
 
 // ==========================================
-// DISPLAY PRODUCT DETAILS
+// RENDER PRODUCT DETAILS
 // ==========================================
 
 function renderProductDetails() {
@@ -100,20 +98,25 @@ function renderProductDetails() {
     const image = safeURL(product.image);
 
     const oldPrice = Number(product.oldPrice) || 0;
-    const price = Number(product.price) || 0;
 
     const options = Array.isArray(product.options)
         ? product.options
         : [];
 
-    selectedOption = options.length ? options[0] : null;
+    selectedOption = options.length
+        ? options[0]
+        : null;
 
     const manual1 = safeURL(product.manualPdf1);
     const manual2 = safeURL(product.manualPdf2);
 
+    const rating = product.rating || "★★★★★";
+
     productContainer.innerHTML = `
 
         <div class="product-details">
+
+            <!-- PRODUCT IMAGE -->
 
             <div class="product-details-image">
 
@@ -125,37 +128,60 @@ function renderProductDetails() {
 
             </div>
 
+
+            <!-- PRODUCT INFORMATION -->
+
             <div class="product-details-info">
 
-                <p class="product-category">
-                    ${escapeHTML(product.category)}
-                </p>
+                <!-- PRODUCT NAME -->
 
                 <h1>
                     ${escapeHTML(product.name)}
                 </h1>
 
+
+                <!-- CATEGORY -->
+
+                <p class="product-category">
+                    ${escapeHTML(product.category)}
+                </p>
+
+
+                <!-- RATING -->
+
                 <div class="product-rating">
-                    ${escapeHTML(product.rating || "")}
+                    ${escapeHTML(rating)}
                 </div>
+
+
+                <!-- PRICE -->
 
                 <div class="product-details-price">
 
-                    <strong id="details-price">
-                        Rs. ${price.toLocaleString()}
-                    </strong>
-
                     ${
-                        oldPrice > price
+                        oldPrice > 0 &&
+                        oldPrice > Number(
+                            selectedOption
+                                ? selectedOption.price
+                                : product.price
+                        )
                         ? `<del>Rs. ${oldPrice.toLocaleString()}</del>`
                         : ""
                     }
 
+                    <strong id="details-price">
+                        Rs. 0
+                    </strong>
+
                 </div>
+
+
+                <!-- PRODUCT OPTIONS -->
 
                 ${
                     options.length
                     ? `
+
                         <div class="product-option-box">
 
                             <label for="details-option">
@@ -163,22 +189,102 @@ function renderProductDetails() {
                             </label>
 
                             <select id="details-option">
+
                                 ${options.map((option, index) => `
+
                                     <option value="${index}">
+
                                         ${escapeHTML(option.size)}
                                         - Rs. ${Number(option.price).toLocaleString()}
+
                                     </option>
+
                                 `).join("")}
+
                             </select>
 
                         </div>
+
                     `
                     : ""
                 }
 
+
+                <!-- STOCK -->
+
                 <div class="product-stock">
+
                     <span id="details-stock"></span>
+
                 </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="product-description">
+
+                    <p>
+                        ${escapeHTML(
+                            product.description ||
+                            "No description available."
+                        )}
+                    </p>
+
+                </div>
+
+
+                <!-- PRODUCT MANUALS -->
+
+                ${
+                    manual1 || manual2
+                    ? `
+
+                        <div class="product-manuals">
+
+                            ${
+                                manual1
+                                ? `
+
+                                    <a
+                                        href="${escapeHTML(manual1)}"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="manual-download"
+                                    >
+                                        <i class="fa-solid fa-file-pdf"></i>
+                                        View / Download Manual 1
+                                    </a>
+
+                                `
+                                : ""
+                            }
+
+                            ${
+                                manual2
+                                ? `
+
+                                    <a
+                                        href="${escapeHTML(manual2)}"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="manual-download"
+                                    >
+                                        <i class="fa-solid fa-file-pdf"></i>
+                                        View / Download Manual 2
+                                    </a>
+
+                                `
+                                : ""
+                            }
+
+                        </div>
+
+                    `
+                    : ""
+                }
+
+
+                <!-- QUANTITY -->
 
                 <div class="product-quantity">
 
@@ -186,89 +292,201 @@ function renderProductDetails() {
                         Quantity
                     </label>
 
-                    <input
-                        type="number"
-                        id="details-quantity"
-                        value="1"
-                        min="1"
-                        step="1"
-                    >
+                    <div class="quantity-controls">
+
+                        <button
+                            type="button"
+                            id="quantity-minus"
+                            aria-label="Decrease quantity"
+                        >
+                            -
+                        </button>
+
+                        <input
+                            type="number"
+                            id="details-quantity"
+                            value="1"
+                            min="1"
+                            step="1"
+                        >
+
+                        <button
+                            type="button"
+                            id="quantity-plus"
+                            aria-label="Increase quantity"
+                        >
+                            +
+                        </button>
+
+                    </div>
 
                 </div>
+
+
+                <!-- TOTAL PRICE -->
+
+                <div class="product-total" id="product-total">
+
+                    Rs. 0
+
+                </div>
+
+
+                <!-- ADD TO CART -->
 
                 <button
                     type="button"
                     id="details-add-cart"
                     class="add-cart"
                 >
+
                     <i class="fa-solid fa-cart-shopping"></i>
+
                     Add To Cart
+
                 </button>
-
-                <div class="product-description">
-
-                    <h3>Product Description</h3>
-
-                    <p>${escapeHTML(product.description || "No description available.")}</p>
-
-                </div>
-
-                ${
-                    manual1 || manual2
-                    ? `
-                        <div class="product-manuals">
-                            <h3>Product Manuals</h3>
-
-                            ${
-                                manual1
-                                ? `<a href="${escapeHTML(manual1)}" target="_blank" rel="noopener">
-                                    Download Manual 1
-                                   </a>`
-                                : ""
-                            }
-
-                            ${
-                                manual2
-                                ? `<a href="${escapeHTML(manual2)}" target="_blank" rel="noopener">
-                                    Download Manual 2
-                                   </a>`
-                                : ""
-                            }
-                        </div>
-                    `
-                    : ""
-                }
 
             </div>
 
         </div>
+
     `;
 
-    // Update SEO information
-    updateProductSEO(product);
 
-    // Update selected price and stock
+    // ======================================
+    // INITIALIZE PRODUCT
+    // ======================================
+
     updateProductOptionDisplay();
 
-    // Attach option change event
+    updateProductTotal();
+
+    updateProductSEO(product);
+
+
+    // ======================================
+    // OPTION CHANGE
+    // ======================================
+
     const optionSelect =
         document.getElementById("details-option");
 
     if (optionSelect) {
+
         optionSelect.addEventListener("change", () => {
 
             const index = Number(optionSelect.value);
 
             selectedOption = options[index];
 
+            document.getElementById("details-quantity").value = 1;
+
             updateProductOptionDisplay();
+
+            updateProductTotal();
+
+            updateProductSEO(product);
+
         });
+
     }
 
-    // Attach add to cart event
+
+    // ======================================
+    // QUANTITY MINUS
+    // ======================================
+
+    document
+        .getElementById("quantity-minus")
+        .addEventListener("click", () => {
+
+            const input =
+                document.getElementById("details-quantity");
+
+            let quantity = Number(input.value) || 1;
+
+            if (quantity > 1) {
+
+                input.value = quantity - 1;
+
+                updateProductTotal();
+
+            }
+
+        });
+
+
+    // ======================================
+    // QUANTITY PLUS
+    // ======================================
+
+    document
+        .getElementById("quantity-plus")
+        .addEventListener("click", () => {
+
+            const input =
+                document.getElementById("details-quantity");
+
+            let quantity = Number(input.value) || 1;
+
+            const stock = getCurrentStock();
+
+            if (quantity < stock) {
+
+                input.value = quantity + 1;
+
+                updateProductTotal();
+
+            } else {
+
+                alert("Maximum available stock reached.");
+
+            }
+
+        });
+
+
+    // ======================================
+    // MANUAL QUANTITY INPUT
+    // ======================================
+
+    document
+        .getElementById("details-quantity")
+        .addEventListener("input", updateProductTotal);
+
+
+    // ======================================
+    // ADD TO CART
+    // ======================================
+
     document
         .getElementById("details-add-cart")
         .addEventListener("click", addProductToCart);
+
+}
+
+// ==========================================
+// GET CURRENT PRICE
+// ==========================================
+
+function getCurrentPrice() {
+
+    return selectedOption
+        ? Number(selectedOption.price) || 0
+        : Number(currentProduct.price) || 0;
+
+}
+
+// ==========================================
+// GET CURRENT STOCK
+// ==========================================
+
+function getCurrentStock() {
+
+    return selectedOption
+        ? Number(selectedOption.stock) || 0
+        : Number(currentProduct.stock) || 0;
+
 }
 
 // ==========================================
@@ -279,13 +497,9 @@ function updateProductOptionDisplay() {
 
     if (!currentProduct) return;
 
-    const price = selectedOption
-        ? Number(selectedOption.price) || 0
-        : Number(currentProduct.price) || 0;
+    const price = getCurrentPrice();
 
-    const stock = selectedOption
-        ? Number(selectedOption.stock) || 0
-        : Number(currentProduct.stock) || 0;
+    const stock = getCurrentStock();
 
     const priceElement =
         document.getElementById("details-price");
@@ -301,10 +515,52 @@ function updateProductOptionDisplay() {
 
     stockElement.textContent =
         stock > 0
-            ? `In Stock (${stock})`
+            ? "In Stock"
             : "Out of Stock";
 
     addButton.disabled = stock <= 0;
+
+    updateProductTotal();
+
+}
+
+// ==========================================
+// UPDATE TOTAL PRICE
+// ==========================================
+
+function updateProductTotal() {
+
+    if (!currentProduct) return;
+
+    const quantityInput =
+        document.getElementById("details-quantity");
+
+    const totalElement =
+        document.getElementById("product-total");
+
+    if (!quantityInput || !totalElement) return;
+
+    let quantity = Number(quantityInput.value);
+
+    const stock = getCurrentStock();
+
+    const price = getCurrentPrice();
+
+    if (!Number.isInteger(quantity) || quantity < 1) {
+        quantity = 1;
+    }
+
+    if (stock > 0 && quantity > stock) {
+        quantity = stock;
+    }
+
+    quantityInput.value = quantity;
+
+    const total = price * quantity;
+
+    totalElement.textContent =
+        "Rs. " + total.toLocaleString();
+
 }
 
 // ==========================================
@@ -320,21 +576,21 @@ function addProductToCart() {
 
     const quantity = Number(quantityInput.value);
 
-    const stock = selectedOption
-        ? Number(selectedOption.stock) || 0
-        : Number(currentProduct.stock) || 0;
+    const stock = getCurrentStock();
 
-    const price = selectedOption
-        ? Number(selectedOption.price) || 0
-        : Number(currentProduct.price) || 0;
+    const price = getCurrentPrice();
 
     if (!Number.isInteger(quantity) || quantity < 1) {
+
         alert("Please enter a valid quantity.");
+
         return;
     }
 
     if (quantity > stock) {
+
         alert("Sorry! Requested quantity is not available.");
+
         return;
     }
 
@@ -347,14 +603,22 @@ function addProductToCart() {
         : "";
 
     const existingProduct = cart.find(item =>
+
         Number(item.id) === Number(currentProduct.id) &&
+
         String(item.size || "") === String(size)
+
     );
+
 
     if (existingProduct) {
 
-        if (Number(existingProduct.quantity) + quantity > stock) {
+        if (
+            Number(existingProduct.quantity) + quantity > stock
+        ) {
+
             alert("Not enough stock available.");
+
             return;
         }
 
@@ -364,29 +628,46 @@ function addProductToCart() {
     } else {
 
         cart.push({
+
             id: currentProduct.id,
+
             name: currentProduct.name,
+
             price: price,
+
             image: currentProduct.image,
+
             size: size,
+
             quantity: quantity
+
         });
+
     }
 
-    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // SAVE CART
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
 
     alert("Product added to cart successfully!");
 
     window.location.href = "cart.html";
+
 }
 
 // ==========================================
-// UPDATE SEO / SOCIAL MEDIA INFORMATION
+// SEO INFORMATION
 // ==========================================
 
 function updateProductSEO(product) {
 
     const pageURL = window.location.href;
+
     const imageURL = safeURL(product.image);
 
     document.title =
@@ -396,6 +677,7 @@ function updateProductSEO(product) {
         product.description ||
         "Buy " + product.name + " from LankaCNC Sri Lanka.";
 
+
     const metaDescription =
         document.querySelector('meta[name="description"]');
 
@@ -403,12 +685,14 @@ function updateProductSEO(product) {
         metaDescription.content = description;
     }
 
+
     const canonical =
         document.getElementById("canonical-url");
 
     if (canonical) {
         canonical.href = pageURL;
     }
+
 
     const ogTitle =
         document.querySelector('meta[property="og:title"]');
@@ -422,58 +706,84 @@ function updateProductSEO(product) {
     const ogURL =
         document.querySelector('meta[property="og:url"]');
 
-    if (ogTitle) ogTitle.content = product.name;
 
-    if (ogDescription) ogDescription.content = description;
-
-    if (ogImage && imageURL) {
-        ogImage.content = new URL(imageURL, window.location.href).href;
+    if (ogTitle) {
+        ogTitle.content = product.name;
     }
 
-    if (ogURL) ogURL.content = pageURL;
+    if (ogDescription) {
+        ogDescription.content = description;
+    }
 
-    // Product structured data
+    if (ogImage && imageURL) {
+
+        ogImage.content =
+            new URL(imageURL, window.location.href).href;
+
+    }
+
+    if (ogURL) {
+        ogURL.content = pageURL;
+    }
+
+
+    // PRODUCT SCHEMA
+
     const schema = {
+
         "@context": "https://schema.org",
+
         "@type": "Product",
+
         "name": product.name,
+
         "image": imageURL
             ? [new URL(imageURL, window.location.href).href]
             : [],
+
         "description": description,
+
         "sku": String(product.id),
+
         "brand": {
+
             "@type": "Brand",
+
             "name": "LankaCNC"
+
         },
+
         "offers": {
+
             "@type": "Offer",
+
             "priceCurrency": "LKR",
-            "price": String(
-                selectedOption
-                    ? selectedOption.price
-                    : product.price
-            ),
-            "availability": (
-                Number(selectedOption
-                    ? selectedOption.stock
-                    : product.stock) > 0
-            )
+
+            "price": String(getCurrentPrice()),
+
+            "availability": getCurrentStock() > 0
                 ? "https://schema.org/InStock"
                 : "https://schema.org/OutOfStock"
+
         }
+
     };
+
 
     const schemaElement =
         document.getElementById("product-schema");
 
     if (schemaElement) {
-        schemaElement.textContent = JSON.stringify(schema);
+
+        schemaElement.textContent =
+            JSON.stringify(schema);
+
     }
+
 }
 
 // ==========================================
-// START
+// START PRODUCT DETAILS
 // ==========================================
 
 loadProductDetails();

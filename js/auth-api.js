@@ -1,7 +1,7 @@
 // Shared authentication API helper.
 // IMPORTANT: Deploy Google Apps Script as a Web App and put the /exec URL here.
 const AUTH_API_URL =
-    "https://script.google.com/macros/s/AKfycbwul7Xxmm9M_JhZ9twGC7dD1LX28gbWxuAUrmaObPt0xakXjdVMjVCYkqFfWvkyrtUK/exec";
+    "https://script.google.com/macros/s/AKfycbw0Vv8Ob0DpKjSRohCHrW2nM2Z5AuYNP79IZb5eUKxJOI8Y7MaFPDgapjBxCDOmGGDJ/exec";
  
 async function authRequest(action, data = {}) {
     const response = await fetch(AUTH_API_URL, {

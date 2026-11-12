@@ -138,28 +138,45 @@ body {
 /* PRODUCT DESCRIPTION */
 
 .product-description {
-    margin-top: 15px;
-    padding: 0;
-
-    background: transparent;
-    border: none;
-    border-radius: 0;
-
-    color: #e2e8f0;
-    font-size: 12px;
-    line-height: 1.6;
+    margin-top: 20px;
+    color: #cbd5e1;
+    font-size: 13px;
+    line-height: 1.7;
 }
 
 .product-description h3 {
-    color: #ffffff;
-    font-size: 15px;
-    margin-bottom: 8px;
+    color: #38bdf8;
+    font-size: 16px;
+    margin: 15px 0 8px;
 }
 
 .product-description p {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
+/* KEY FEATURES */
+
+.product-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.product-feature-list li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 8px;
+    color: #e2e8f0;
+    font-size: 12px;
+}
+
+.product-feature-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+    font-weight: bold;
+}
 /* PRODUCT MANUALS */
 
 .product-manuals {

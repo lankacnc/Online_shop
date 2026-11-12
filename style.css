@@ -1910,11 +1910,10 @@ header{
 
     .video-card img {
         width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-        object-fit: contain;
+        height: 100%;
         display: block;
-        background: #111;
+        object-fit: cover;
+        object-position: center;
     }
 
     .video-card h3 {

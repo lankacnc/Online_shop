@@ -1847,10 +1847,12 @@ header{
 }
 
 .video-card {
-    background: transparent;
+    background: #111 !important;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
 }
 
 .video-card video {
@@ -1866,13 +1868,13 @@ header{
     object-fit: contain;
     display: block;
     background: #111;
+    border: none;
 }
+
 .video-card h3 {
-    
-    display: none;
-    padding: 12px;
+    display: none !important;
+    padding: 0;
     margin: 0;
-    font-size: 18px;
 }
 
 

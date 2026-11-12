@@ -1877,7 +1877,72 @@ header{
     margin: 0;
 }
 
+/* Mobile Responsive - Video Section */
 
+@media screen and (max-width: 768px) {
+
+    .video-section {
+        padding: 30px 15px;
+    }
+
+    .video-section h2 {
+        font-size: 23px;
+        margin-bottom: 8px;
+    }
+
+    .video-section p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .video-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .video-card {
+        width: 100%;
+        border-radius: 10px;
+        background: #111 !important;
+        overflow: hidden;
+        box-shadow: none;
+    }
+
+    .video-card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+        display: block;
+        background: #111;
+    }
+
+    .video-card h3 {
+        display: none !important;
+    }
+}
+
+/* Small Mobile Phones */
+
+@media screen and (max-width: 480px) {
+
+    .video-section {
+        padding: 25px 12px;
+    }
+
+    .video-section h2 {
+        font-size: 21px;
+    }
+
+    .video-container {
+        gap: 15px;
+    }
+
+    .video-card img {
+        aspect-ratio: 16 / 9;
+    }
+
+}
 
 
  

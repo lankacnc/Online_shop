@@ -219,18 +219,34 @@ function renderProductDetails() {
                 </div>
 
 
-                <!-- DESCRIPTION -->
+                <!-- PRODUCT DESCRIPTION -->
 
-                <div class="product-description">
+<div class="product-description">
 
-                    <p>
-                        ${escapeHTML(
-                            product.description ||
-                            "No description available."
-                        )}
-                    </p>
+    <h3>Product Description</h3>
 
-                </div>
+    <p>
+        ${escapeHTML(
+            product.description ||
+            "No description available."
+        )}
+    </p>
+
+    <h3>Key Features</h3>
+
+    <ul class="product-feature-list">
+
+        ${
+            Array.isArray(product.features)
+            ? product.features.map(feature => `
+                <li>${escapeHTML(feature)}</li>
+            `).join("")
+            : ""
+        }
+
+    </ul>
+
+</div>
 
 
                 <!-- PRODUCT MANUALS -->

@@ -1847,7 +1847,7 @@ header{
 }
 
 .video-card {
-    background: white;
+    background: transparent;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 3px 12px rgba(0,0,0,0.12);
@@ -1862,12 +1862,14 @@ header{
 }
 .video-card img {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 230px;
     object-fit: contain;
     display: block;
     background: #111;
 }
 .video-card h3 {
+    
+    display: none;
     padding: 12px;
     margin: 0;
     font-size: 18px;

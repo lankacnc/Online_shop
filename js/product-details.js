@@ -232,19 +232,6 @@ function renderProductDetails() {
         )}
     </p>
 
-    <h3>Key Features</h3>
-
-    <ul class="product-feature-list">
-
-        ${
-            Array.isArray(product.features)
-            ? product.features.map(feature => `
-                <li>${escapeHTML(feature)}</li>
-            `).join("")
-            : ""
-        }
-
-    </ul>
 
 </div>
 
